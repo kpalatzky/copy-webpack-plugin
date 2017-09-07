@@ -77,7 +77,7 @@ export default function writeFile(globalRef, pattern, file) {
 
             let size = stat.size;
             if (compilation.assets[file.webpackTo]) {
-                if (file.merge) {
+                if (file.append) {
                     const asset = compilation.assets[file.webpackTo];
                     size += asset.size();
                     content = asset.source() + content;
