@@ -21,6 +21,7 @@ export default function processPattern(globalRef, pattern) {
     .map((fileFrom) => {
         const file = {
             force: pattern.force,
+            merge: pattern.merge,
             absoluteFrom: path.resolve(pattern.context, fileFrom)
         };
         file.relativeFrom = path.relative(pattern.context, file.absoluteFrom);

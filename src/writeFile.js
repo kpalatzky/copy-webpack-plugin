@@ -75,9 +75,16 @@ export default function writeFile(globalRef, pattern, file) {
                 };
             }
 
-            if (compilation.assets[file.webpackTo] && !file.force) {
-                info(`skipping '${file.webpackTo}', because it already exists`);
-                return;
+            let size = stat.size;
+            if (compilation.assets[file.webpackTo]) {
+                if (file.merge) {
+                    const asset = compilation.assets[file.webpackTo];
+                    size += asset.size();
+                    content = asset.source() + content;
+                } else if (!file.force) {
+                    info(`skipping '${file.webpackTo}', because it already exists`);
+                    return;
+                }
             }
 
             info(`writing '${file.webpackTo}' to compilation assets from '${file.absoluteFrom}'`);
