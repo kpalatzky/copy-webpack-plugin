@@ -100,7 +100,8 @@ module.exports = {
             {
                 from: 'path/to/file.txt',
                 to: 'directory/with/extension.ext',
-                toType: 'dir'
+                toType: 'dir',
+                append: true
             }
         ], {
             ignore: [
