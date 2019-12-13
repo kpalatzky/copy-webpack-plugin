@@ -1,7 +1,7 @@
 {
-  "name": "copy-webpack-plugin",
+  "name": "@xeditor/copy-webpack-plugin",
   "version": "4.1.0",
-  "description": "Copy files and directories in webpack",
+  "description": "Fork of copy-webpack-plugin. Copy files and directories in webpack",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
